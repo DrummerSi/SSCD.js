@@ -1,5 +1,7 @@
-// FILE: license.js
-
+// FILE: license.js
+
+
+
 // SSCD (Super Simple Collision Detection) is distributed with the zlib-license:
 
 /* 
@@ -22,10 +24,14 @@
   Ronen Ness
   ronenness@gmail.com
 
-*/
-
-// FILE: sscd.js
-
+*/
+
+
+
+// FILE: sscd.js
+
+
+
 /*
 * First file we import, set version and namespace
 * Author: Ronen Ness, 2015
@@ -39,10 +45,14 @@ var SSCD = SSCD || {};
 
 // version identifier
 SSCD.VERSION = 1.5;
-
-
-// FILE: utils/math.js
-
+
+
+
+
+// FILE: utils/math.js
+
+
+
 /*
  * Some useful Math functions.
  * Author: Ronen Ness, 2015
@@ -151,10 +161,14 @@ SSCD.Math.angles_dis = function(a0, a1) {
 
 	// return abs value
 	return Math.abs(distance);
-};
-
-// FILE: utils/vector.js
-
+};
+
+
+
+// FILE: utils/vector.js
+
+
+
 /*
  * This file define the 2d vector class & utils.
  * Author: Ronen Ness, 2015
@@ -383,10 +397,14 @@ SSCD.Vector.RIGHT = new SSCD.Vector(1, 0);
 SSCD.Vector.UP_LEFT = new SSCD.Vector(-1, -1);
 SSCD.Vector.DOWN_LEFT = new SSCD.Vector(-1, 1);
 SSCD.Vector.UP_RIGHT = new SSCD.Vector(1, -1);
-SSCD.Vector.DOWN_RIGHT = new SSCD.Vector(1, 1);
-
-// FILE: utils/extend.js
-
+SSCD.Vector.DOWN_RIGHT = new SSCD.Vector(1, 1);
+
+
+
+// FILE: utils/extend.js
+
+
+
 /*
  * Provide simple inheritance (extend prototype)
  * Author: Ronen Ness, 2015
@@ -429,10 +447,14 @@ SSCD.NotImplementedError = function(message) {
 	this.name = "NotImplementedError";
 	this.message = (message || "");
 };
-SSCD.NotImplementedError.prototype = Error.prototype;
-
-// FILE: utils/aabb.js
-
+SSCD.NotImplementedError.prototype = Error.prototype;
+
+
+
+// FILE: utils/aabb.js
+
+
+
 /*
  * Define axis-aligned-bounding-box class.
  * Author: Ronen Ness, 2015
@@ -498,10 +520,14 @@ SSCD.AABB.prototype = {
 		return new SSCD.AABB(this.position, this.size);
 	}
 
-};
-
-// FILE: world.js
-
+};
+
+
+
+// FILE: world.js
+
+
+
 /*
  * Physical world contains a grid of shapes you can efficiently check collision with
  * Author: Ronen Ness, 2015
@@ -1024,10 +1050,14 @@ SSCD.IllegalActionError = function(message) {
 	this.name = "Illegal Action";
 	this.message = (message || "");
 };
-SSCD.IllegalActionError.prototype = Error.prototype;
-
-// FILE: tilemap.js
-
+SSCD.IllegalActionError.prototype = Error.prototype;
+
+
+
+// FILE: tilemap.js
+
+
+
 /*
  * Tilemap is a special type of collision world, optimized specifically for a 2d tilemap.
  * Author: Ronen Ness, 2015
@@ -1155,10 +1185,14 @@ SSCD.TilemapWorld.prototype = {
 };
 
 // inherit from basic world class.
-SSCD.extend(SSCD.World.prototype, SSCD.TilemapWorld.prototype);
-
-// FILE: shapes/shape.js
-
+SSCD.extend(SSCD.World.prototype, SSCD.TilemapWorld.prototype);
+
+
+
+// FILE: shapes/shape.js
+
+
+
 /*
  * define the base class of any collision shape.
  * every type of shape should inherit from this class.
@@ -1510,10 +1544,14 @@ SSCD.Shape.prototype = {
 		return this.__aabb;
 	},
 
-};
-
-// FILE: shapes/circle.js
-
+};
+
+
+
+// FILE: shapes/circle.js
+
+
+
 /*
  * A circle collision shape
  * Author: Ronen Ness, 2015
@@ -1586,10 +1624,14 @@ SSCD.Circle.prototype = {
 
 // inherit from basic shape class.
 // this will fill the missing functions from parent, but will not replace functions existing in child.
-SSCD.extend(SSCD.Shape.prototype, SSCD.Circle.prototype);
-
-// FILE: shapes/rectangle.js
-
+SSCD.extend(SSCD.Shape.prototype, SSCD.Circle.prototype);
+
+
+
+// FILE: shapes/rectangle.js
+
+
+
 /*
  * rectangle collision shape
  * Author: Ronen Ness, 2015
@@ -1691,10 +1733,14 @@ SSCD.Rectangle.prototype = {
 
 // inherit from basic shape class.
 // this will fill the missing functions from parent, but will not replace functions existing in child.
-SSCD.extend(SSCD.Shape.prototype, SSCD.Rectangle.prototype);
-
-// FILE: shapes/line.js
-
+SSCD.extend(SSCD.Shape.prototype, SSCD.Rectangle.prototype);
+
+
+
+// FILE: shapes/line.js
+
+
+
 /*
  * A line collision shape
  * Author: Ronen Ness, 2015
@@ -1772,10 +1818,14 @@ SSCD.Line.prototype = {
 
 // inherit from basic shape class.
 // this will fill the missing functions from parent, but will not replace functions existing in child.
-SSCD.extend(SSCD.Shape.prototype, SSCD.Line.prototype);
-
-// FILE: shapes/lines_strip.js
-
+SSCD.extend(SSCD.Shape.prototype, SSCD.Line.prototype);
+
+
+
+// FILE: shapes/lines_strip.js
+
+
+
 /*
  * A strip-of-lines collision shape
  * Author: Ronen Ness, 2015
@@ -1904,10 +1954,14 @@ SSCD.LineStrip.prototype = {
 
 // inherit from basic shape class.
 // this will fill the missing functions from parent, but will not replace functions existing in child.
-SSCD.extend(SSCD.Shape.prototype, SSCD.LineStrip.prototype);
-
-// FILE: shapes/composite_shape.js
-
+SSCD.extend(SSCD.Shape.prototype, SSCD.LineStrip.prototype);
+
+
+
+// FILE: shapes/composite_shape.js
+
+
+
 /*
  * a special shape made from multiple shapes combined together
  * Author: Ronen Ness, 2015
@@ -2110,10 +2164,14 @@ SSCD.CompositeShape.prototype = {
 
 // inherit from basic shape class.
 // this will fill the missing functions from parent, but will not replace functions existing in child.
-SSCD.extend(SSCD.Shape.prototype, SSCD.CompositeShape.prototype);
-
-// FILE: shapes/capsule.js
-
+SSCD.extend(SSCD.Shape.prototype, SSCD.CompositeShape.prototype);
+
+
+
+// FILE: shapes/capsule.js
+
+
+
 /*
  * a special shape made from multiple shapes combined together
  * Author: Ronen Ness, 2015
@@ -2159,10 +2217,14 @@ SSCD.Capsule.prototype = {
 
 // inherit from CompositeShape class.
 // this will fill the missing functions from parent, but will not replace functions existing in child.
-SSCD.extend(SSCD.CompositeShape.prototype, SSCD.Capsule.prototype);
-
-// FILE: shapes/shapes_collider.js
-
+SSCD.extend(SSCD.CompositeShape.prototype, SSCD.Capsule.prototype);
+
+
+
+// FILE: shapes/shapes_collider.js
+
+
+
 /*
  * here we define all the collision-detection functions for all possible shape combinations
  * Author: Ronen Ness, 2015
@@ -2568,18 +2630,26 @@ SSCD.UnsupportedShapes = function(a, b) {
 	this.name = "Unsupported Shapes";
 	this.message = "Unsupported shapes collision test! '" + a.get_name() + "' <-> '" + b.get_name() + "'.";
 };
-SSCD.UnsupportedShapes.prototype = Error.prototype;
-
-// FILE: sscd_close.js
-
+SSCD.UnsupportedShapes.prototype = Error.prototype;
+
+
+
+// FILE: sscd_close.js
+
+
+
 
 // close the whole namespace
 
 return SSCD;
-})();
-
-// FILE: packages/npm.js
-
+})();
+
+
+
+// FILE: packages/npm.js
+
+
+
 /*
 * This file is just to make this package npm compliant.
 * Author: Ronen Ness, 2015
@@ -2587,6 +2657,8 @@ return SSCD;
 
 if (typeof exports !== "undefined")
 {
-	exports.sscd = SSCD;
-}
-
+	module.exports = SSCD;
+}
+
+
+
