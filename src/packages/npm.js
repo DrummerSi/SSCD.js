@@ -5,5 +5,5 @@
 
 if (typeof exports !== "undefined")
 {
-	exports.sscd = SSCD;
+	module.exports = SSCD;
 }
